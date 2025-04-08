@@ -1,0 +1,24 @@
+@import '../styles/utils/variables';
+@import '../styles/utils/mixins';
+.viewContainer {
+  background-color: $white;
+  padding: 1.5rem 3rem;
+  width: 50%;
+}
+.viewBtn {
+  display: flex;
+  padding: 0.5rem 1rem;
+  background-color: $black;
+  color: $white;
+  transition: background-color 0.2s;
+}
+.viewBtn:hover {
+  background-color: $hover-color;
+  border-color: $hover-color;
+}
+.viewList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-item;
+  padding: 1rem 1rem;
+}

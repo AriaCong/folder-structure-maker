@@ -1,0 +1,96 @@
+@import '../styles/utils/variables';
+@import '../styles/utils/mixins';
+.treeNodeContainer {
+  @include flex-column;
+  color: $black;
+  font-size: $font-size-base;
+  padding: $space-item;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.treeNodeWrapper {
+  display: flex;
+  gap: $space-item;
+  align-items: center;
+}
+.treeNodeHover {
+  background-color: transparent;
+  border: $border-style;
+}
+.inputContainer {
+  display: flex;
+  align-items: center;
+  gap: $space-item;
+}
+.input {
+  border: 1px solid $black;
+  border-radius: 0.25rem;
+  font-size: $font-size-base;
+  width: 12rem;
+  height: 2rem;
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
+}
+.icon {
+  width: $icon-size;
+  height: $icon-size;
+  padding: $icon-padding;
+  object-fit: contain;
+}
+.commonBtn {
+  width: $icon-size;
+  height: $icon-size;
+  padding: $icon-padding;
+  border-radius: $border-radius;
+  cursor: pointer;
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+.actionBtnBlack {
+  @extend .commonBtn;
+  background: $black;
+}
+.actionBtnWhite {
+  @extend .commonBtn;
+  background: $white;
+  border: $border-style;
+}
+.nodeContainer {
+  display: flex;
+  align-items: center;
+  gap: $space-item;
+}
+
+.actionBtnRound {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: $black;
+  @include flex-center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+.nodeTypeBtn {
+  padding: $space-item;
+  font-size: $font-size-base;
+  background-color: $hover-color;
+  border-radius: $border-radius;
+  border: $border-style;
+}
+.actionBtnContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
