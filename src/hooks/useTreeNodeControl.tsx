@@ -14,10 +14,11 @@ export const useTreeNodeControl = (node: NodeModel, parentNode?: NodeModel) => {
   const [typeSelector, setTypeSelector] = useState<string | null>(null)
 
   const isEditing = editingNodeId === node.id
+  // Input validation
   const validateInput = (input: string): boolean => {
     return input.trim() !== '' && !input.includes(' ')
   }
-
+  // Services
   const addChildNode = () => {
     setTypeSelector(node.id)
   }
@@ -34,6 +35,7 @@ export const useTreeNodeControl = (node: NodeModel, parentNode?: NodeModel) => {
     setEditingNodeId(newNode.id)
     setTypeSelector(null)
   }
+
   const saveNode = () => {
     if (!validateInput(inputValue)) {
       alert('Invalid input')
@@ -43,6 +45,7 @@ export const useTreeNodeControl = (node: NodeModel, parentNode?: NodeModel) => {
     setEditingNodeId(null)
     setTreeArray((prev) => [...prev]) // trigger rerndering
   }
+
   const deleteNode = () => {
     if (parentNode) {
       parentNode.children = parentNode.children?.filter(
@@ -56,7 +59,6 @@ export const useTreeNodeControl = (node: NodeModel, parentNode?: NodeModel) => {
       setTreeArray(newTreeArray)
     }
   }
-  const editNode = () => {}
 
   return {
     inputType,

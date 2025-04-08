@@ -34,15 +34,13 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, depth = 0, parentNode }) => {
   }
 
   return (
-    // style={indentationStyle(depth) li??
-    <li className={styles.treeNodeContainer}>
+    <li className={styles.treeNodeContainer} style={indentationStyle(depth)}>
       <div
         className={`${styles.treeNodeWrapper} ${
           isHoever && !isEditing ? styles.treeNodeHover : ''
         }`}
         onMouseEnter={() => setIsHoever(true)}
         onMouseLeave={() => setIsHoever(false)}
-        style={indentationStyle(depth)}
       >
         {depth > 0 && <span>└─ </span>}
         {isEditing ? (

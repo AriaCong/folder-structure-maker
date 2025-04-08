@@ -1,3 +1,4 @@
+// Node model was given originally for the tree structure
 // export class NodeModel {
 //     type: 'folder' | 'file' | 'unset' | null;
 //     name?: string;
