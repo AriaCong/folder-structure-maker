@@ -29,12 +29,12 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, depth = 0, parentNode }) => {
   } = useTreeNodeControl(node, parentNode)
   const [isHoever, setIsHoever] = useState(false)
 
-  const indentationStyle = (depth: number) => {
-    return depth > 0 ? { paddingLeft: `${depth * 5}px` } : undefined
-  }
-
   return (
-    <li className={styles.treeNodeContainer} style={indentationStyle(depth)}>
+    <li
+      className={`${depth !== 0 && styles.treeNodeContainerLine} ${
+        styles.treeNodeContainer
+      }`}
+    >
       <div
         className={`${styles.treeNodeWrapper} ${
           isHoever && !isEditing ? styles.treeNodeHover : ''
@@ -42,7 +42,6 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, depth = 0, parentNode }) => {
         onMouseEnter={() => setIsHoever(true)}
         onMouseLeave={() => setIsHoever(false)}
       >
-        {depth > 0 && <span>└─ </span>}
         {isEditing ? (
           <div className={styles.inputContainer}>
             <img
@@ -66,7 +65,11 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, depth = 0, parentNode }) => {
         ) : (
           <>
             {
-              <div className={styles.nodeContainer}>
+              <div
+                className={`${depth !== 0 && styles.nodeContainerLine} ${
+                  styles.nodeContainer
+                }`}
+              >
                 {node.type === 'file' ? (
                   <img src={fileIcon} alt="file" className={styles.icon} />
                 ) : (
@@ -112,8 +115,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, depth = 0, parentNode }) => {
         </ul>
       )}
       {typeSelector === node.id && (
-        <div style={indentationStyle(depth)}>
-          {depth > 0 && <span>└─ </span>}
+        <div style={depth > 0 ? { paddingLeft: `${depth}px` } : {}}>
           <button
             className={styles.nodeTypeBtn}
             onClick={() => childTypeSelector('folder')}

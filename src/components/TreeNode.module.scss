@@ -8,6 +8,51 @@
   justify-content: center;
   transition: all 0.3s ease;
 }
+
+@mixin line-style($height) {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: calc(#{$icon-size} / 2 * -1);
+  width: 20px;
+  height: $height;
+  border-color: $black;
+  border-left: 1px solid $black;
+}
+
+.treeNodeContainerLine {
+  position: relative;
+  &::before {
+    @include line-style(calc(100%));
+  }
+  &:last-child::before {
+    @include line-style(calc(100%));
+  }
+  &:first-child::before {
+    @include line-style(calc(100% - #{$icon-size} / 2));
+    top: 0;
+  }
+  &:last-child:first-child::before {
+    @include line-style(calc(#{$icon-size} / 1.5));
+    top: 0;
+  }
+}
+
+.nodeContainerLine {
+  display: flex;
+  align-items: center;
+  gap: $space-item;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    transform: translateX(calc(-100%)) translateY(-50%);
+    width: $icon-size / 1.5;
+    height: $icon-size;
+    border-bottom: 1px solid $black;
+  }
+}
+
 .treeNodeWrapper {
   display: flex;
   gap: $space-item;
