@@ -26,6 +26,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, depth = 0, parentNode }) => {
     deleteNode,
     typeSelector,
     childTypeSelector,
+    editingNodeId,
   } = useTreeNodeControl(node, parentNode)
   const [isHoever, setIsHoever] = useState(false)
 
@@ -82,7 +83,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, depth = 0, parentNode }) => {
                 {node.name}
               </div>
             }
-            {isHoever && (
+            {isHoever && !editingNodeId && (
               <div className={styles.actionBtnContainer}>
                 {node.type === 'folder' && (
                   <button

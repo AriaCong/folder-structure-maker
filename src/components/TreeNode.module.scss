@@ -26,7 +26,7 @@
     @include line-style(calc(100%));
   }
   &:last-child::before {
-    @include line-style(calc(100%));
+    @include line-style($icon-size);
   }
   &:first-child::before {
     @include line-style(calc(100% - #{$icon-size} / 2));

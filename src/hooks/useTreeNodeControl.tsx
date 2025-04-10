@@ -71,5 +71,6 @@ export const useTreeNodeControl = (node: NodeModel, parentNode?: NodeModel) => {
     saveNode,
     childTypeSelector,
     typeSelector,
+    editingNodeId,
   }
 }
