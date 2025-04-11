@@ -58,6 +58,7 @@ export const useTreeNodeControl = (node: NodeModel, parentNode?: NodeModel) => {
       )
       setTreeArray(newTreeArray)
     }
+    setEditingNodeId(null)
   }
 
   return {
