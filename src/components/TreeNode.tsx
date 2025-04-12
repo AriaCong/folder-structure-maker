@@ -28,7 +28,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, depth = 0, parentNode }) => {
     childTypeSelector,
     editingNodeId,
   } = useTreeNodeControl(node, parentNode)
-  const [isHoever, setIsHoever] = useState(false)
+  const [isHover, setIsHover] = useState(false)
 
   return (
     <li
@@ -38,10 +38,10 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, depth = 0, parentNode }) => {
     >
       <div
         className={`${styles.treeNodeWrapper} ${
-          isHoever && !isEditing ? styles.treeNodeHover : ''
+          isHover && !isEditing ? styles.treeNodeHover : ''
         }`}
-        onMouseEnter={() => setIsHoever(true)}
-        onMouseLeave={() => setIsHoever(false)}
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
       >
         {isEditing ? (
           <div className={styles.inputContainer}>
@@ -83,7 +83,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, depth = 0, parentNode }) => {
                 {node.name}
               </div>
             }
-            {isHoever && !editingNodeId && (
+            {isHover && !editingNodeId && (
               <div className={styles.actionBtnContainer}>
                 {node.type === 'folder' && (
                   <button
