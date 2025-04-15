@@ -1,0 +1,43 @@
+@import '../styles/utils';
+
+.treeViewContainer {
+  background-color: $white;
+  display: flex;
+  flex-direction: row;
+  padding: 1.5rem 3rem;
+  width: 100%;
+  min-height: 400px;
+}
+.treeView {
+  background-color: $white;
+  padding: 1.5rem 3rem;
+  width: 50%;
+  min-height: 400px;
+}
+.searchView {
+  background-color: $white;
+  padding: 1.5rem 3rem;
+  width: 50%;
+  min-height: 400px;
+  @include flex-column;
+}
+.addRootBtn {
+  display: flex;
+  padding: 0.5rem 1rem;
+  background-color: $black;
+  color: $white;
+  transition: background-color 0.2s;
+}
+.addRootBtn:hover {
+  background-color: $hover-color;
+  border-color: $hover-color;
+}
+.treeViewList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-item;
+  padding: 1rem 1rem;
+}
+.searchInput {
+  @include common-input;
+}

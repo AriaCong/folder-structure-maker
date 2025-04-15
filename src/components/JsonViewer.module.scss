@@ -1,0 +1,29 @@
+@import '../styles/utils';
+.jsonViewerContainer {
+  //position: relative;
+  min-height: 200px;
+  margin-top: 50vh;
+  @include flex-center;
+  flex-direction: column;
+  position: fixed; // stick to the viewport
+  bottom: 0; // align to bottom
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.title {
+  @include title-style;
+  margin-top: auto; // push it to the bottom of the container
+  margin-bottom: 20px;
+}
+.jsonViewer {
+  width: 80%;
+  height: 400px;
+  margin-top: auto; // push it to the bottom of the container
+  margin-bottom: 40px; // add some space from bottom
+}
+.downloadBtn {
+  @include common-btn-rectangle;
+  height: 50px;
+  margin-bottom: 10px;
+}

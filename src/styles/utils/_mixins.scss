@@ -1,0 +1,40 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin title-style {
+  font-size: $font-size-title;
+  font-weight: $font-weight-title;
+  margin: auto 0;
+  text-align: center;
+}
+
+@mixin common-btn-rectangle {
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: $font-size-base;
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+@mixin common-input {
+  border: 1px solid $black;
+  border-radius: 0.25rem;
+  font-size: $font-size-base;
+  width: 12rem;
+  height: 2rem;
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
+}

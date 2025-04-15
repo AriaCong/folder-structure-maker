@@ -1,3 +1,11 @@
+## New Features
+
+1. Collapse and expand folders
+2. Drag and drop function
+3. Save the last time input and reload it while re-open
+4. Add a Search Bar to search for a file/folder name
+5. Download JSON file
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
