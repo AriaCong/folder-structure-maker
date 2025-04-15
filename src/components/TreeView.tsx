@@ -15,6 +15,7 @@ const TreeView: React.FC = () => {
       id: Date.now().toString(),
       type: 'folder',
       children: [],
+      name: '',
     }
     const newTree = [...treeArray, newNode]
     setEditingNodeId(newNode.id)
